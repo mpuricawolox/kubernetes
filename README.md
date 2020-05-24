@@ -114,9 +114,9 @@ Notice that in the selector section, in the app attribute we're using the same n
 
 5.  Create a security group with the propper inbound and outbound rules. Here's an example:
 
-![Sg Inbound rules example](https://drive.google.com/file/d/186EFKScyZZP6qWHv3z2e2fFGwkJSI_vE/view?usp=sharing)
+![sg inbound rules example](https://raw.githubusercontent.com/mpuricawolox/kubernetes/master/sg-inbound-rules-example.png)
 
-![enter image description here](https://drive.google.com/file/d/1mGkmcNdt3F92YMDhhrvqYO6zQrM6UfMl/view?usp=sharing)
+![sg outbound rules example](https://raw.githubusercontent.com/mpuricawolox/kubernetes/master/sg-outbound-rules-example.png)
 
 6.  Create a kubectl ingress which is going to configure an ALB (load balancer) and make the needed settings (inbound rules and target groups) so the traffic to the load balancer is redirected to the service. You should use a security group with the propper rules. Here's an example yaml:
 
