@@ -157,4 +157,8 @@ Now run the command:
  ```
 
 
--   After that you’re going to have an ELB url. So you will probably need a DNS so your users will find a nice and readable URL.
+After that you’re going to have an ELB url. So you will probably need a DNS so your users will find a nice and readable URL.
+
+## Road map
+- Add local environment configurations for kubectl working with AWS profiles
+- Add details about what represents the parameters in the yaml files
