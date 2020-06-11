@@ -1,7 +1,31 @@
 ## Configuring your local environment to work with kubectl
 
-.....
+ After you configure your aws profiles you can configure your kube config so you can access your EKS clusters using kubectl.
+  To do so use the next commands:
 
+  ```
+  aws eks list-clusters --profile yourprofilename
+  ```
+
+ This will list all clusters inside the account associated with your profile. Take the one you need and use it with the next command along with the propper region
+
+ ```
+  aws eks --region us-east-1 update-kubeconfig --name cluster-name --profile yourprofilename
+ ```
+
+This will create or update your kube config file adding a cluster, a context and a user. Now you can connect and administrate your EKS cluster.
+
+List your clusters with:
+
+```
+kubectl config get-clusters
+```
+
+And set the cluster you desire using:
+
+```
+ kubectl config set-cluster cluster-name-or-arn
+```
 
 ## Setting an application running on AWS EC2
 
@@ -162,3 +186,9 @@ After that you’re going to have an ELB url. So you will probably need a DNS so
 ## Road map
 - Add local environment configurations for kubectl working with AWS profiles
 - Add details about what represents the parameters in the yaml files
+
+
+## Setting env vars
+
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-env-em-
+kubectl set env deploy/arauco-api MAP_BASE_URL=https://map-dev.parauco.com
