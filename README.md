@@ -7,13 +7,13 @@
   aws eks list-clusters --profile yourprofilename
   ```
 
- This will list all clusters inside the account associated with your profile. Take the one you need and use it with the next command along with the propper region
+ This will list all clusters inside the account associated with your profile. Take the one you need and use it with the next command along with the propper region. [More info here.](https://docs.aws.amazon.com/cli/latest/reference/emr/list-clusters.html)
 
  ```
   aws eks --region us-east-1 update-kubeconfig --name cluster-name --profile yourprofilename
  ```
 
-This will create or update your kube config file adding a cluster, a context and a user. Now you can connect and administrate your EKS cluster.
+This will create or update your kube config file adding a cluster, a context and a user. Now you can connect and administrate your EKS cluster. For more information on configuring your kubectl to work with aws profiles visit this [link.](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
 
 List your clusters with:
 
@@ -26,6 +26,8 @@ And set the cluster you desire using:
 ```
  kubectl config set-cluster cluster-name-or-arn
 ```
+
+For more information on contexts go to this [link](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 ## Setting an application running on AWS EC2
 
