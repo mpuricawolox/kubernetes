@@ -41,9 +41,7 @@ For more information on contexts go to this [link](https://kubernetes.io/docs/re
 		"Effect": "Allow",
 		"Principal": {
 			"AWS": [
-				"arn:aws:iam::737897690563:root",
-				"arn:aws:iam::426645307445:role/ecosis-global-eks-rol",
-				"arn:aws:iam::917222561357:root"
+				// arns
 			]
 		},
 		"Action": [
@@ -88,7 +86,7 @@ spec:
         app: arauco-map-web
     spec:
       containers:
-      - image: 426645307445.dkr.ecr.us-east-1.amazonaws.com/arauco-map:b7ae14f2bbc87600f56340a3d5600af3d34be842
+      - image: REPOSITORY_URL:b7ae14f2bbc87600f56340a3d5600af3d34be842
         imagePullPolicy: Always
         name: arauco-map-web
         ports:
@@ -153,10 +151,10 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig":
       { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:917222561357:certificate/758a9a18-a090-4f18-946e-548822bca9e3
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:ACOUNT_NUMBER:certificate/758a9a18-a090-4f18-946e-548822bca9e3
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/security-groups: sg-0df1578c2b434c963
+    alb.ingress.kubernetes.io/security-groups: sg-ertyuiokjhgfd
     kubernetes.io/ingress.class: alb
   generation: 1
   labels:
